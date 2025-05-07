@@ -41,7 +41,6 @@ def create_comparison_plot(t, no_load, full_load):
             color='red', fontsize=10, bbox=dict(facecolor='white', alpha=0.8))
     
     # 设置图表元素
-    ax.set_title('AGV不同负载工况电流特性对比', fontsize=14, pad=15)
     ax.set_xlabel('时间 (秒)', fontsize=12)
     ax.set_ylabel('电机电流 (A)', fontsize=12)
     ax.legend(loc='upper right', fontsize=12)

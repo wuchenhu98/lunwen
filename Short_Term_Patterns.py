@@ -42,7 +42,7 @@ plt.text(10.5, 58, '分段式载荷补偿', fontsize=12)
 plt.text(17, 62, '海风扰动', fontsize=12)
 
 # 图形美化
-plt.title('岸桥张力传感器数据短时变化', fontsize=14)
+
 plt.xlabel('时间（秒）', fontsize=12)
 plt.ylabel('张力（kN）', fontsize=12)
 plt.grid(True)

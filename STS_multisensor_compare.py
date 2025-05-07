@@ -11,9 +11,9 @@ t_vib = np.linspace(0, 60, 60000)   # 1kHz
 t_temp = np.linspace(0, 60, 60)     # 1Hz
 
 # 钢丝绳张力（阶跃变化 + 异常骤降）
-tension = np.ones_like(t_med) * 100
-tension[500:700] += 50
-tension[1400:1500] = 30  # 异常骤降
+# tension = np.ones_like(t_med) * 100
+# tension[500:700] += 50
+# tension[1400:1500] = 30  # 异常骤降
 
 # 液压压力（脉冲波动 + 延迟）
 pressure = 10 + np.sin(0.3 * np.pi * t_low) + 0.5 * np.random.randn(len(t_low))
@@ -28,24 +28,24 @@ temp = 30 + 0.05 * t_temp
 temp[40:] += 0.2 * (t_temp[40:] - 40) ** 1.2  # 异常升温
 
 # 绘图
-fig, axs = plt.subplots(4, 1, figsize=(12, 8), sharex=True)
+fig, axs = plt.subplots(3, 1, figsize=(12, 8), sharex=True)
 
-axs[0].plot(t_med, tension, color='green')
-axs[0].set_ylabel('张力 (kN)')
-axs[0].set_title('钢丝绳张力')
+# axs[0].plot(t_med, tension, color='green')
+# axs[0].set_ylabel('张力 (kN)')
+# axs[0].set_title('钢丝绳张力')
 
-axs[1].plot(t_low, pressure, color='orange')
-axs[1].set_ylabel('压力 (MPa)')
-axs[1].set_title('液压压力')
+axs[0].plot(t_low, pressure, color='orange')
+axs[0].set_ylabel('压力 (MPa)')
+axs[0].set_title('液压压力')
 
-axs[2].plot(t_vib[::50], vib[::50], color='purple')  # 下采样显示
-axs[2].set_ylabel('加速度 (g)')
-axs[2].set_title('三维振动')
+axs[1].plot(t_vib[::50], vib[::50], color='purple')  # 下采样显示
+axs[1].set_ylabel('加速度 (g)')
+axs[1].set_title('三维振动')
 
-axs[3].plot(t_temp, temp, color='red')
-axs[3].set_ylabel('温度 (°C)')
-axs[3].set_title('红外温度')
-axs[3].set_xlabel('时间 (秒)')
+axs[2].plot(t_temp, temp, color='red')
+axs[2].set_ylabel('温度 (°C)')
+axs[2].set_title('红外温度')
+axs[2].set_xlabel('时间 (秒)')
 
 plt.tight_layout()
 plt.savefig("STS_multisensor_no_current.svg", dpi=300, format='svg')

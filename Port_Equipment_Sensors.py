@@ -42,10 +42,6 @@ for bar in bars:
             fontweight='bold')
 
 # 图表装饰
-ax.set_title('港口设备传感器配置数量对比', 
-             fontsize=14, 
-             pad=20,
-             fontweight='bold')
 ax.set_xlabel('设备类型', 
               fontsize=12,
               labelpad=10)
