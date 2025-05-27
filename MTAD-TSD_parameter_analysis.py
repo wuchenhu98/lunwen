@@ -7,7 +7,7 @@ import matplotlib.ticker as ticker
 matplotlib.rcParams['font.family'] = 'Microsoft YaHei'
 matplotlib.rcParams['axes.unicode_minus'] = False
 
-# 历史时间窗口和F1-Score 数据
+# 历史时间窗口和F1-Score 数据git
 x_labels = ["4", "8", "16", "32","64"]
 data = {
     "MSL":         [81.92, 87.43, 90.02, 88.06, 82.84],
@@ -38,7 +38,7 @@ for i, (label, scores) in enumerate(data.items()):
     # ax.plot(x + offset, scores, marker='o', color=colors[i], linestyle='-', linewidth=2, markersize=6)
 
 # 坐标轴设置
-ax.set_xlabel("子序列窗口大小", fontsize=14)
+ax.set_xlabel("时间序列片段大小", fontsize=14)
 ax.set_ylabel("F1-Score", fontsize=14)
 ax.set_xticks(x)
 ax.set_xticklabels(x_labels, fontsize=12)
