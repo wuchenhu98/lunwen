@@ -34,7 +34,7 @@ for i, (label, scores) in enumerate(data.items()):
     ax.plot(x + offset, scores, marker='o', color=colors[i], linestyle='-', linewidth=2, markersize=6)
 
 # 坐标轴设置
-ax.set_xlabel("历史时间窗口", fontsize=14)
+ax.set_xlabel("时间序列尺度组合", fontsize=14)
 ax.set_ylabel("F1-Score", fontsize=14)
 ax.set_xticks(x)
 ax.set_xticklabels(x_labels, fontsize=12)
